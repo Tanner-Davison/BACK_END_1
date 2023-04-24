@@ -13,19 +13,19 @@ const responseSection = document.getElementsByClassName('response-area')[0];
 // handle submits
 getSubmit.addEventListener('click', () => {
     axios
-        .get('http://localhost:5050/api/inventory')
+        .get('http://localhost:5051/api/inventory/all')
         .then(res => addToView(res.data))
 });
 
 getParamsSubmit.addEventListener('click', () => {
     axios
-        .get(`http://localhost:5050/api/inventory/${paramsInput.value}`)
+        .get(`http://localhost:5051/api/inventory/${paramsInput.value}`)
         .then(res => addToView([res.data]))
 });
 
 getQuerySubmit.addEventListener('click', () => {
     axios
-        .get(`http://localhost:5050/api/inventory?item=${queryInput.value}`)
+        .get(`http://localhost:5051/api/inventory?item=${queryInput.value}`)
         .then(res => addToView(res.data))
 });
 
